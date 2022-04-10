@@ -15,18 +15,21 @@ with open(csvpath) as csvfile:
     total = 0
     total_months = 0
     
-    increase = 0
-    decrease = 0
+    increase = ['', 0]
+    decrease = ['', 0]
 
 
     for row in csvreader:
         profitLoss = float(row[1])
         total_months += 1
         total += profitLoss
-        if profitLoss > increase:
-            increase = profitLoss
-        elif profitLoss < decrease:
-            decrease = profitLoss
+        if profitLoss > increase[1]:
+            increase[1] = profitLoss
+            increase[0] = row[0]
+
+        elif profitLoss < decrease[1]:
+            decrease[1] = profitLoss
+            decrease[0] = row[0]
         
 average_change = round(total / total_months, 2) 
 
@@ -36,8 +39,8 @@ with open(output_path, 'w') as output:
     output.write("Total Months: " + str(total_months) + '\n')
     output.write("Total: $" + str(total) + '\n')
     output.write("Average Change: $" + str(average_change) + '\n')
-    output.write("Greatest Increase in Profits: " + str(increase) + '\n')
-    output.write("Greatest Decrease in Profits: " + str(decrease) + '\n')
+    output.write(f"Greatest Increase in Profits: {increase[0]} (${increase[1]})\n")
+    output.write(f"Greatest Decrease in Profits: {decrease[0]} (${decrease[1]})\n")
 
 #now print from the output
 with open(output_path) as output:
