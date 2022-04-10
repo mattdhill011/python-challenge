@@ -30,12 +30,6 @@ with open(csvpath) as csvfile:
         
 average_change = round(total / total_months, 2) 
 
-print("Total Months: " + str(total_months))
-print("Total: $" + str(total))
-print("Average Change: $" + str(average_change))
-print("Greatest Increase in Profits: " + str(increase))
-print("Greatest Decrease in Profits: " + str(decrease))
-
 with open(output_path, 'w') as output:
     output.write("Financial Analysis\n")
     output.write("----------------------\n")
@@ -44,3 +38,8 @@ with open(output_path, 'w') as output:
     output.write("Average Change: $" + str(average_change) + '\n')
     output.write("Greatest Increase in Profits: " + str(increase) + '\n')
     output.write("Greatest Decrease in Profits: " + str(decrease) + '\n')
+
+#now print from the output
+with open(output_path) as output:
+    for line in output:
+        print(line.strip())
