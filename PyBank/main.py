@@ -62,7 +62,7 @@ with open(output_path, 'w') as output:
     output.write(f"Greatest Increase in Profits: {increase[0]} (${increase[1]})\n")
     output.write(f"Greatest Decrease in Profits: {decrease[0]} (${decrease[1]})\n")
 
-# Now print from the output to the terminal
+# Now print from the output to the terminal, stripped of new line characters
 with open(output_path) as output:
     for line in output:
         print(line.strip())
