@@ -52,12 +52,3 @@ with open(output_path, 'w') as output:
 with open(output_path) as output:
     for line in output:
         print(line.strip())
-
-
-
-    
-
-
-
-
-

@@ -3,5 +3,5 @@ Financial Analysis
 Total Months: 86
 Total: $22564198.0
 Average Change: $262374.4
-Greatest Increase in Profits: Mar-13 ($1141840.0)
-Greatest Decrease in Profits: Dec-10 ($-1194133.0)
+Greatest Increase in Profits: Aug-16 ($1862002.0)
+Greatest Decrease in Profits: Feb-14 ($-1825558.0)
